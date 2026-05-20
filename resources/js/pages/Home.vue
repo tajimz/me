@@ -1,10 +1,12 @@
 <script setup>
+import BlogCard from '@/Components/BlogCard.vue';
 import ProjectCard from '@/Components/ProjectCard.vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
 import { Link } from '@inertiajs/vue3';
 
 defineProps({
-    featured_projects: Array
+    featured_projects: Array,
+    featured_blogs: Array
 });
 </script>
 
@@ -79,6 +81,26 @@ defineProps({
                     v-for="project in featured_projects" 
                     :key="project.id" 
                     :project="project" 
+                />
+            </div>
+        </section>
+
+        <section class="py-20 border-t border-slate-200/50">
+            <div class="flex items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-4xl font-black text-slate-900 mb-2">Featured Blogs</h2>
+                    <p class="text-slate-500">A selection of my recent blogs.</p>
+                </div>
+                <Link href="/projects" class="font-bold text-indigo-600 hover:text-indigo-800 transition-colors">
+                    View All Blogs &rarr;
+                </Link>
+            </div>
+
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <BlogCard 
+                    v-for="blog in featured_blogs" 
+                    :key="blog.id" 
+                    :blog="blog" 
                 />
             </div>
         </section>
