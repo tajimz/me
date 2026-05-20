@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -11,6 +12,4 @@ Route::get('/blogs', function () {
     return Inertia::render('Blogs');
 });
 
-Route::get('/projects', function () {
-    return Inertia::render('Projects');
-});
+Route::get('/projects', [ProjectController::class, 'index']);
