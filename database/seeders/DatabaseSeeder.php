@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Blog;
 use App\Models\Project;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -17,5 +18,6 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         Project::factory()->count(12)->create();
+        Blog::factory()->count(12)->create();
     }
 }
