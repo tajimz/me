@@ -33,19 +33,19 @@ const filteredProjects = computed(() => {
                 <div
                     class="mb-4 inline-block rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-xs font-bold tracking-widest text-indigo-600 uppercase"
                 >
-                    Engineering Showcase
+                    Project Log
                 </div>
                 <h1
                     class="mb-6 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl md:text-6xl"
                 >
-                    Architected Projects.
+                    Things I’ve Built
                 </h1>
                 <p
                     class="px-2 text-base leading-relaxed text-slate-600 md:text-lg"
                 >
-                    Explore production utilities, native environments, and
-                    embedded devices designed from the ground up to solve
-                    technical constraints elegantly.
+                    A collection of web, Android, and IoT projects I’ve built
+                    while learning. Some worked on the first try, some took a
+                    few extra nights!
                 </p>
             </div>
 
@@ -121,7 +121,7 @@ const filteredProjects = computed(() => {
                     />
                 </svg>
                 <p class="px-4 font-bold text-slate-500">
-                    No project items initialized under this category tag yet.
+                    Nothing here yet, but I'm currently working on something new. Check back soon!
                 </p>
             </div>
         </div>

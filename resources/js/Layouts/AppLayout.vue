@@ -73,8 +73,9 @@ const isOpen = ref(false);
                         TR.TAJIM
                     </Link>
                     <p class="max-w-xs text-sm leading-relaxed text-slate-500">
-                        Full stack developer crafting digital experiences with
-                        Laravel, Vue.js, and hardware integration.
+                        Just a random kid who loves building things for the web
+                        with Laravel, Android with Java, and IoT with Arduino.
+                        Always learning.
                     </p>
                 </div>
 
@@ -135,7 +136,7 @@ const isOpen = ref(false);
                     © {{ new Date().getFullYear() }} Tajbir Roman Tajim. All
                     rights reserved.
                 </p>
-                <span>Designed with Vue & Laravel</span>
+                <span>Powered by Laravel & Vue 3</span>
             </div>
         </div>
     </footer>

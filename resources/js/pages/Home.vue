@@ -32,7 +32,7 @@ defineProps({
                     <div
                         class="mb-6 inline-block rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5 text-xs font-bold tracking-widest text-indigo-600 uppercase"
                     >
-                        Full Stack Programmer
+                        Still Learning
                     </div>
                     <h1
                         class="mb-8 text-5xl leading-[1.1] font-black tracking-tight md:text-7xl"
@@ -48,22 +48,26 @@ defineProps({
                     <p
                         class="mx-auto mb-10 max-w-md text-lg leading-relaxed text-slate-600 md:mx-0"
                     >
-                        I’m Tajim, specializing in Laravel, Vue.js, native
-                        Android, and Arduino based IoT devices. I turn complex
-                        problems into elegant digital solutions.
+                        Hi, I’m Tajim. I love building things with code. Whether
+                        it’s web development, Android apps, or tinkering with
+                        Arduino hardware, I’m always working on something new.
                     </p>
                     <div
                         class="flex flex-col justify-center gap-4 sm:flex-row md:justify-start"
                     >
+                        <!-- Primary Button -->
+                        <!-- Primary "Sticker" Button -->
                         <Link
                             href="/blogs"
-                            class="rounded-2xl bg-indigo-600 px-8 py-4 font-bold text-white shadow-lg shadow-indigo-200 transition-all hover:-translate-y-1 hover:shadow-indigo-300"
+                            class="relative rounded-2xl bg-indigo-600 px-8 py-4 font-bold text-white shadow-lg shadow-indigo-200 transition-all hover:scale-105 hover:-rotate-2 active:scale-95"
                         >
                             Read Blogs
                         </Link>
+
+                        <!-- Secondary "Draft" Button -->
                         <Link
                             href="/projects"
-                            class="rounded-2xl border border-slate-200 bg-white px-8 py-4 font-bold transition-all hover:bg-slate-50"
+                            class="relative rounded-2xl border-2 border-dashed border-slate-400 bg-slate-50 px-8 py-4 font-bold text-slate-700 transition-all hover:scale-105 hover:rotate-2 hover:border-slate-600 active:scale-95"
                         >
                             View Projects
                         </Link>
@@ -151,10 +155,10 @@ defineProps({
                         <h2
                             class="mb-2 text-3xl font-black text-slate-900 md:text-4xl"
                         >
-                            Featured Blogs
+                            Notes & Reviews
                         </h2>
                         <p class="text-slate-500">
-                            A selection of my recent blogs.
+                            Books I’m reading and thoughts I’m keeping.
                         </p>
                     </div>
                     <Link
