@@ -15,4 +15,13 @@ class BlogController extends Controller
             'blogs' => Blog::latest()->get()
         ]);
     }
+
+    public function show(Blog $blog)
+    {
+        $blog->increment('views');
+
+        return Inertia::render('Blog', [
+            'blog' => $blog
+        ]);
+    }
 }
