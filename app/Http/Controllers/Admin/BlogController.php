@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 
@@ -51,5 +52,39 @@ class BlogController extends Controller
     {
         $blog->delete();
         return redirect()->route('admin.blogs.index');
+    }
+
+    function edit(Blog $blog)
+    {
+        return Inertia::render('admin/Blogs/Edit', [
+            'blog' => $blog
+        ]);
+    }
+
+    public function update(Request $request, Blog $blog)
+    {
+
+        $validated = $request->validate([
+            'title'        => 'required|string|max:255',
+            'slug'         => 'required|string|unique:blogs,slug,' . $blog->id,
+            'content'      => 'required',
+            'cover_image'  => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'views'        => 'required|integer',
+            'is_featured'  => 'boolean',
+            'is_published' => 'boolean',
+        ]);
+
+        if ($request->hasFile('cover_image')) {
+            Storage::disk('public')->delete($blog->cover_image);
+
+            $validated['cover_image'] = $request->file('cover_image')->store('blogs', 'public');
+        } else {
+            $validated['cover_image'] = $blog->cover_image;
+        }
+        $validated['excerpt'] = Str::words(strip_tags($validated['content']), 20, '...');
+
+        $blog->update($validated);
+
+        return redirect()->route('admin.blogs.index')->with('success', 'Blog updated successfully.');
     }
 }
