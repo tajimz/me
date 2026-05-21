@@ -26,15 +26,25 @@ const submit = () => {
 
 <template>
     <AdminLayout>
-        <header class="mb-12">
-            <h1 class="text-4xl font-black tracking-tighter text-slate-900">
-                Edit Blog
-            </h1>
-            <p
-                class="mt-2 text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase"
-            >
-                Editing: {{ blog.title }}
-            </p>
+        <header class="mb-12 flex items-start justify-between">
+            <div>
+                <!-- Back Link -->
+                <Link
+                    href="/admin/blogs"
+                    class="mb-4 flex items-center text-[9px] font-black tracking-[0.2em] text-slate-400 uppercase transition-colors hover:text-indigo-600"
+                >
+                    ← Back to Blogs
+                </Link>
+
+                <h1 class="text-4xl font-black tracking-tighter text-slate-900">
+                    Edit Blog
+                </h1>
+                <p
+                    class="mt-2 text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase"
+                >
+                    Editing: {{ blog.title }}
+                </p>
+            </div>
         </header>
 
         <form

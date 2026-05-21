@@ -10,7 +10,7 @@ defineProps({
 <template>
     <AdminLayout>
         <!-- Header -->
-        <header class="flex justify-between items-end mb-12">
+        <header class="flex flex-col md:flex-row justify-between md:items-end mb-12 gap-6">
             <div>
                 <h1 class="text-4xl font-black tracking-tighter text-slate-900">Manage Blogs</h1>
                 <p class="mt-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
@@ -19,7 +19,7 @@ defineProps({
             </div>
             <Link 
                 href="/admin/blogs/create" 
-                class="bg-slate-900 px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-white hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-600/20"
+                class="bg-slate-900 px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-white hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-600/20 text-center"
             >
                 + New Post
             </Link>
@@ -28,7 +28,7 @@ defineProps({
         <!-- Data Table -->
         <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden">
             <table class="w-full text-left border-collapse">
-                <thead>
+                <thead class="hidden md:table-header-group">
                     <tr class="border-b border-slate-200 bg-slate-50/50">
                         <th class="p-6 text-[9px] font-black uppercase tracking-widest text-slate-400">Title</th>
                         <th class="p-6 text-[9px] font-black uppercase tracking-widest text-slate-400">Date</th>
@@ -37,16 +37,28 @@ defineProps({
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100">
-                    <tr v-for="blog in blogs" :key="blog.id" class="hover:bg-slate-50/50 transition-colors">
-                        <td class="p-6 font-bold text-slate-900">{{ blog.title }}</td>
-                        <td class="p-6 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <tr v-for="blog in blogs" :key="blog.id" class="flex flex-col md:table-row hover:bg-slate-50/50 transition-colors p-6 md:p-0">
+                        <!-- Title (Always visible) -->
+                        <td class="md:p-6 font-bold text-slate-900 text-lg md:text-base mb-2 md:mb-0">
+                            {{ blog.title }}
+                        </td>
+                        
+                        <!-- Mobile-only meta row -->
+                        <td class="md:p-6 flex gap-4 md:hidden text-[9px] font-black uppercase tracking-widest text-slate-400 mb-4">
+                            <span>{{ new Date(blog.created_at).toLocaleDateString() }}</span>
+                            <span>{{ blog.views || 0 }} Views</span>
+                        </td>
+
+                        <!-- Desktop columns (Hidden on mobile) -->
+                        <td class="p-6 text-[10px] font-black uppercase tracking-widest text-slate-400 hidden md:table-cell">
                             {{ new Date(blog.created_at).toLocaleDateString() }}
                         </td>
-                        <!-- Added Views Column -->
-                        <td class="p-6 text-center text-xs font-bold text-slate-600">
+                        <td class="p-6 text-center text-xs font-bold text-slate-600 hidden md:table-cell">
                             {{ blog.views || 0 }}
                         </td>
-                        <td class="p-6 text-right space-x-4">
+
+                        <!-- Actions (Always visible) -->
+                        <td class="pt-4 md:p-6 text-left md:text-right flex gap-6 md:justify-end border-t md:border-t-0 border-slate-100">
                             <Link 
                                 :href="`/admin/blogs/${blog.id}/edit`" 
                                 class="text-[10px] font-black uppercase tracking-widest text-indigo-600 hover:text-slate-900"
