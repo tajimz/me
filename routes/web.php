@@ -13,7 +13,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/blogs/{blog:slug}', [BlogController::class, 'show']);
 Route::get('/projects', [ProjectController::class, 'index']);
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->name('admin.')->group(function () {
 
     // Dashboard: The root of /admin
     Route::get('/', [DashboardController::class, 'index']);
