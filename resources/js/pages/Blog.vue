@@ -89,10 +89,11 @@ const goBack = () => {
             </div>
 
             <!-- Content: Added responsive spacing to prose -->
+            <!-- Content: Added whitespace-pre-wrap to respect author's line breaks -->
             <article
-                class="prose prose-sm md:prose-lg prose-indigo prose-headings:font-black prose-a:text-indigo-600 max-w-none"
+                class="prose prose-sm md:prose-lg prose-indigo prose-headings:font-black prose-a:text-indigo-600 max-w-none whitespace-pre-wrap"
             >
-                <div v-html="blog.content"></div>
+                {{ blog.content }}
             </article>
 
             <!-- Footer Share Section -->
