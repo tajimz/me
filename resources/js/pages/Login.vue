@@ -78,7 +78,31 @@ const submit = () => {
                             />
                         </div>
                     </div>
-
+                    <div
+                        class="mt-6 rounded-xl border border-indigo-100 bg-indigo-50/50 p-4"
+                    >
+                        <p
+                            class="mb-1 text-center text-[9px] font-bold tracking-widest text-indigo-400 uppercase"
+                        >
+                            Read-only Access For Viewing Admin Panel
+                        </p>
+                        <div
+                            class="flex justify-center gap-4 font-mono text-[10px] text-slate-600"
+                        >
+                            <p>
+                                Email:
+                                <span class="font-bold text-slate-900"
+                                    >check@tajimz.xyz</span
+                                >
+                            </p>
+                            <p>
+                                Pass:
+                                <span class="font-bold text-slate-900"
+                                    >check123</span
+                                >
+                            </p>
+                        </div>
+                    </div>
                     <button
                         :disabled="form.processing"
                         class="mt-8 w-full rounded-2xl bg-slate-900 py-4 text-xs font-black tracking-widest text-white uppercase transition-all hover:scale-[1.02] hover:bg-indigo-600 active:scale-[0.98]"
