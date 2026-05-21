@@ -117,7 +117,7 @@ defineProps({
             <!-- FEATURED WORK SECTION -->
             <section class="border-t border-slate-200/50 py-12 md:py-20">
                 <div
-                    class="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end"
+                    class="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end"
                 >
                     <div>
                         <h2
@@ -129,12 +129,6 @@ defineProps({
                             A selection of my favorite projects.
                         </p>
                     </div>
-                    <Link
-                        href="/projects"
-                        class="font-bold text-indigo-600 transition-colors hover:text-indigo-800"
-                    >
-                        View All Projects &rarr;
-                    </Link>
                 </div>
 
                 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -144,12 +138,20 @@ defineProps({
                         :project="project"
                     />
                 </div>
+                <div class="mt-12 flex justify-center">
+                    <Link
+                        href="/projects"
+                        class="font-bold text-indigo-600 transition-colors hover:text-indigo-800"
+                    >
+                        View All Projects &rarr;
+                    </Link>
+                </div>
             </section>
 
             <!-- FEATURED BLOGS SECTION -->
             <section class="border-t border-slate-200/50 py-12 md:py-20">
                 <div
-                    class="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end"
+                    class="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end"
                 >
                     <div>
                         <h2
@@ -161,12 +163,6 @@ defineProps({
                             Books I’m reading and thoughts I’m keeping.
                         </p>
                     </div>
-                    <Link
-                        href="/blogs"
-                        class="font-bold text-indigo-600 transition-colors hover:text-indigo-800"
-                    >
-                        View All Blogs &rarr;
-                    </Link>
                 </div>
 
                 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -175,6 +171,14 @@ defineProps({
                         :key="blog.id"
                         :blog="blog"
                     />
+                </div>
+                <div class="mt-12 flex justify-center">
+                    <Link
+                        href="/blogs"
+                        class="font-bold text-indigo-600 transition-colors hover:text-indigo-800"
+                    >
+                        View All Blogs &rarr;
+                    </Link>
                 </div>
             </section>
         </div>

@@ -25,13 +25,28 @@ const isOpen = ref(false);
             <div
                 class="hidden space-x-8 text-xs font-bold tracking-widest text-slate-600 uppercase md:flex"
             >
-                <Link href="/" class="transition hover:text-indigo-600"
+                <Link
+                    href="/"
+                    :class="{ 'text-indigo-600': $page.url === '/' }"
+                    class="transition hover:text-indigo-600"
                     >Home</Link
                 >
-                <Link href="/blogs" class="transition hover:text-indigo-600"
+
+                <Link
+                    href="/blogs"
+                    :class="{
+                        'text-indigo-600': $page.url.startsWith('/blogs'),
+                    }"
+                    class="transition hover:text-indigo-600"
                     >Blogs</Link
                 >
-                <Link href="/projects" class="transition hover:text-indigo-600"
+
+                <Link
+                    href="/projects"
+                    :class="{
+                        'text-indigo-600': $page.url.startsWith('/projects'),
+                    }"
+                    class="transition hover:text-indigo-600"
                     >Projects</Link
                 >
             </div>
@@ -111,18 +126,21 @@ const isOpen = ref(false);
                         Connect
                     </h4>
                     <a
-                        href="mailto:com.tajim@gmail.com"
+                        href="https://facebook.com/trtajim"
                         class="text-sm font-medium text-slate-600 transition hover:text-indigo-600"
-                        >Email Me</a
+                        target="_blank"
+                        >Facebook</a
                     >
                     <a
                         href="https://github.com/tajimz"
                         class="text-sm font-medium text-slate-600 transition hover:text-indigo-600"
+                        target="_blank"
                         >GitHub</a
                     >
                     <a
                         href="https://linkedin.com/in/tajimz"
                         class="text-sm font-medium text-slate-600 transition hover:text-indigo-600"
+                        target="_blank"
                         >LinkedIn</a
                     >
                 </div>
@@ -136,7 +154,7 @@ const isOpen = ref(false);
                     © {{ new Date().getFullYear() }} Tajbir Roman Tajim. All
                     rights reserved.
                 </p>
-                <span>Powered by Laravel & Vue 3</span>
+                <span>Powered by Laravel & Vue 3 (Inertia)</span>
             </div>
         </div>
     </footer>

@@ -102,7 +102,7 @@ defineProps({
                 target="_blank"
                 class="flex h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-3 text-xs font-bold text-white shadow-lg shadow-indigo-100 transition-all hover:bg-indigo-700"
             >
-                Demo <ExternalLink class="h-4 w-4" />
+                View Live <ExternalLink class="h-4 w-4" />
             </a>
         </div>
     </article>
