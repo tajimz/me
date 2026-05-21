@@ -16,7 +16,7 @@ defineProps({
         <!-- Image: Added aspect-ratio for better mobile consistency -->
         <div class="h-48 sm:h-52 overflow-hidden">
             <img
-                :src="blog.cover_image"
+                :src="`/storage/${blog.cover_image}`"
                 :alt="blog.title"
                 class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />

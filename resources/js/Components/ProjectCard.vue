@@ -26,7 +26,7 @@ defineProps({
                 class="relative mb-5 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-100 bg-slate-100"
             >
                 <img
-                    :src="project.cover_image"
+                    :src="`/storage/${project.cover_image}`"
                     :alt="project.name"
                     class="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                 />
