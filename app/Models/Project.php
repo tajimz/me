@@ -18,8 +18,6 @@ class Project extends Model
         'live_url',
         'download_url',
         'tags',
-        'is_visible',
-        ];
-
-
+        'is_featured',
+    ];
 }

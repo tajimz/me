@@ -58,7 +58,7 @@ class ProjectController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'details' => 'required',
-            'cover_image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'cover_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'type' => 'required|in:app,web',
             'github_url' => 'nullable|url',
             'live_url' => 'nullable|url',
