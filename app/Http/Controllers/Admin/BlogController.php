@@ -47,4 +47,9 @@ class BlogController extends Controller
 
         return redirect()->route('admin.blogs.index');
     }
+    function destroy(Blog $blog)
+    {
+        $blog->delete();
+        return redirect()->route('admin.blogs.index');
+    }
 }

@@ -38,4 +38,10 @@ class ProjectController extends Controller
         Project::create($validated);
         return redirect()->route('admin.projects.index');
     }
+
+    function destroy(Project $project)
+    {
+        $project->delete();
+        return redirect()->route('admin.projects.index');
+    }
 }

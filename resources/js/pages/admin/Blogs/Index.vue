@@ -57,6 +57,7 @@ defineProps({
                                 :href="`/admin/blogs/${blog.id}`" 
                                 method="delete" 
                                 as="button"
+                                preserve-scroll
                                 class="text-[10px] font-black uppercase tracking-widest text-red-500 hover:text-red-700"
                             >
                                 Delete

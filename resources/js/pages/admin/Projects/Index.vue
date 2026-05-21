@@ -78,6 +78,7 @@ defineProps({
                                 :href="`/admin/projects/${project.id}`"
                                 method="delete"
                                 as="button"
+                                preserve-scroll
                                 class="text-[10px] font-black tracking-widest text-red-500 uppercase hover:text-red-700"
                             >
                                 Delete
