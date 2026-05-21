@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class AdminController extends Controller
+class DashboardController extends Controller
 {
     //
     public function index()
