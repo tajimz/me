@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Middleware\EnsureReadOnlyMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -14,7 +15,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/blogs/{blog:slug}', [BlogController::class, 'show']);
 Route::get('/projects', [ProjectController::class, 'index']);
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', EnsureReadOnlyMiddleware::class])->group(function () {
 
     // Dashboard: The root of /admin
     Route::get('/', [DashboardController::class, 'index']);
