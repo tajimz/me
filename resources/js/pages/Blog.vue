@@ -82,7 +82,7 @@ const goBack = () => {
                 class="mb-12 overflow-hidden rounded-2xl border-4 border-white shadow-2xl md:mb-16 md:rounded-[2rem]"
             >
                 <img
-                    :src="blog.cover_image"
+                    :src="`/storage/${blog.cover_image}`"
                     :alt="blog.title"
                     class="h-[250px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[350px] md:h-[450px]"
                 />
